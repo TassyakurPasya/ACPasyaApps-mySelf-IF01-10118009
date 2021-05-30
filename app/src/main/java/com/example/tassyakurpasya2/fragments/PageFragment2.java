@@ -1,5 +1,5 @@
 package com.example.tassyakurpasya2.fragments;
-
+//20/05/2021,membuat view pager , 10118009, Tassyakur Pasya, IF01
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

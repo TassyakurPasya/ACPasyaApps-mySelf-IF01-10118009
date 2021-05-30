@@ -1,5 +1,5 @@
 package com.example.tassyakurpasya2;
-
+//19/05/2021,membuat splash screen , 10118009, Tassyakur Pasya, IF01
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;

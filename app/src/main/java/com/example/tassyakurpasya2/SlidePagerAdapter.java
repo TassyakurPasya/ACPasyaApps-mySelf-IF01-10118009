@@ -1,5 +1,5 @@
 package com.example.tassyakurpasya2;
-
+//20/05/2021,membuat view pager , 10118009, Tassyakur Pasya, IF01
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;

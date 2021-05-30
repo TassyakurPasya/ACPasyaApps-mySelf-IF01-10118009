@@ -1,8 +1,11 @@
 package com.example.tassyakurpasya2;
-
+//22/05/2021,membuat navigator daily, 10118009, Tassyakur Pasya, IF01
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,7 +61,41 @@ public class DailyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        final View view = inflater.inflate(R.layout.fragment_daily, container, false);
+        final FragmentActivity fragment = getActivity();
+        final FragmentActivity fragment2 = getActivity();
+        final RecyclerView recyclerView = view.findViewById(R.id.recyleviewfl);
+        //final RecyclerView recyclerView2 = view.findViewById(R.id.recycleview2);
+        //LinearLayoutManager layoutManager2 = new LinearLayoutManager(fragment2, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(fragment, LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+        //recyclerView2.setLayoutManager(layoutManager2);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_daily, container, false);
+        String[] nama = {
+                "Muhammad Ihsan", "Fatahilla Satria Bima Seno", "Dian Rosa Pratama"
+        };
+        int[] foto_profile = {
+
+                R.drawable.ihsan, R.drawable.seno, R.drawable.dian
+        };
+        final dailyadapterfl adapter = new dailyadapterfl(fragment,foto_profile,nama);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                fragment.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        recyclerView.setAdapter(adapter);
+
+
+                    }
+
+                });
+            }
+
+        }).start();
+
+        return view;
     }
+
 }

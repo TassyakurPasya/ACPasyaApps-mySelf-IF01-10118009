@@ -1,11 +1,12 @@
 package com.example.tassyakurpasya2;
-
+//20/05/2021,mulai , 10118009, Tassyakur Pasya, IF01
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.tassyakurpasya2.fragments.PageFragment1;
 import com.example.tassyakurpasya2.fragments.PageFragment2;

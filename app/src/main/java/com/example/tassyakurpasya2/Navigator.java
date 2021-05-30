@@ -1,5 +1,5 @@
 package com.example.tassyakurpasya2;
-
+//22/05/2021,membuat navigator, 10118009, Tassyakur Pasya, IF01
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;

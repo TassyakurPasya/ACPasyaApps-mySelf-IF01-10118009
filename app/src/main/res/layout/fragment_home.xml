@@ -3,13 +3,292 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ungu"
+    android:background="@color/black"
     tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/fotoprofil"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            />
+        <TextView
+            android:id="@+id/nama"
+            android:layout_below="@+id/foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tassyakur Pasya"
+            android:textColor="@color/ungu"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/kelas"
+            android:layout_below="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IF01"
+            android:textColor="@color/ungu"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:id="@+id/Nim"
+            android:layout_below="@+id/kelas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10118009"
+            android:textColor="@color/ungu"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:id="@+id/kata1"
+            android:layout_below="@+id/Nim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tetaplah bersyukur dengan apa yang kita punya,"
+            android:textStyle="italic"
+            android:textColor="@color/ungu"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textSize="10dp"
+            />
+        <TextView
+            android:id="@+id/kata2"
+            android:layout_below="@+id/kata1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="karena masih ada orang yang diluar sana yang belum kita miliki"
+            android:textStyle="italic"
+            android:textColor="@color/ungu"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textSize="10dp"
+            />
+
+        <Toolbar
+            android:layout_width="350dp"
+            android:layout_height="370dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="325dp"
+            android:background="@color/ungu"/>
+        <TextView
+            android:id="@+id/judul"
+            android:layout_below="@id/kata2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interest"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/hobby"
+            android:layout_below="@id/judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hobby"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="2dp"
+            android:textSize="18dp"/>
+        <ImageView
+            android:id="@+id/game"
+            android:layout_below="@id/hobby"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/ic_videogame"
+            android:layout_marginLeft="45dp"/>
+        <ImageView
+            android:id="@+id/train"
+            android:layout_below="@id/hobby"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/ic_train"
+            android:layout_marginLeft="150dp"/>
+        <ImageView
+            android:id="@+id/bola"
+            android:layout_below="@id/hobby"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/ic_soccer"
+            android:layout_marginLeft="250dp"/>
+        <TextView
+            android:id="@+id/makes"
+            android:layout_below="@id/game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Makes"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+        <TextView
+            android:id="@+id/makes1"
+            android:layout_below="@id/makes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Bakso"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/makes2"
+            android:layout_below="@id/makes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Mie Ayam"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="140dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/makes3"
+            android:layout_below="@id/makes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Seblak"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="260dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/mikes"
+            android:layout_below="@id/makes1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mikes"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:id="@+id/mikes1"
+            android:layout_below="@id/mikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Es Jeruk"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/mikes2"
+            android:layout_below="@id/mikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Es Boba"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="140dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/mikes3"
+            android:layout_below="@id/mikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Jus Siirsak"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="260dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/interest"
+            android:layout_below="@id/mikes1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interest"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:id="@+id/interest1"
+            android:layout_below="@id/interest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Action"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/interest2"
+            android:layout_below="@id/interest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Comedy"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="140dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/interest3"
+            android:layout_below="@id/interest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Anime"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="260dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/cita"
+            android:layout_below="@id/interest1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cita-Cita"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:id="@+id/isicita"
+            android:layout_below="@id/cita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Orang yang Sukses dibidang Usaha"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"/>
+
+
+
+
+
+
+    </RelativeLayout>
 
 </FrameLayout>
