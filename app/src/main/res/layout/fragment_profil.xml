@@ -3,12 +3,172 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".ProfilFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="hallo ini pforfil" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Toolbar
+            android:id="@+id/profil1"
+            android:layout_width="350dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="100dp"
+            android:background="@color/ungu"/>
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/fotoprofil"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            />
+        <TextView
+            android:id="@+id/nama"
+            android:layout_below="@+id/foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tassyakur Pasya"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/kelas"
+            android:layout_below="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jakarta, 21 Januari 1999"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:id="@+id/Nim"
+            android:layout_below="@+id/kelas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pemalang Pusere Jawa"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:id="@+id/kata1"
+            android:layout_below="@+id/Nim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tetaplah bersyukur dengan apa yang kita punya,"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textSize="10dp"
+            />
+        <TextView
+            android:id="@+id/kata2"
+            android:layout_below="@+id/kata1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="karena masih ada orang yang diluar sana yang belum kita miliki"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textSize="10dp"
+            />
+        <Toolbar
+            android:id="@+id/kontak"
+            android:layout_below="@+id/profil1"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/ungu"/>
+        <TextView
+            android:id="@+id/kontak2"
+            android:layout_below="@+id/profil1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="40dp"
+            android:text="My Contact"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"/>
+        <ImageView
+            android:id="@+id/call"
+            android:layout_below="@id/kontak2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/call"/>
+        <ImageView
+            android:id="@+id/email"
+            android:layout_below="@id/kontak2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="150dp"
+            android:background="@drawable/gmail"/>
+        <ImageView
+            android:id="@+id/ig"
+            android:layout_below="@id/kontak2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="250dp"
+            android:background="@drawable/logoinstagram"/>
+        <Toolbar
+            android:id="@+id/findme"
+            android:layout_below="@+id/kontak"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/ungu"/>
+        <TextView
+            android:id="@+id/tfindme"
+            android:layout_below="@+id/kontak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:text="Find Me"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"/>
+        <ImageView
+            android:id="@+id/maps"
+            android:layout_below="@id/tfindme"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/googlemaps"/>
+        <Button
+            android:id="@+id/aboutfp"
+            android:layout_below="@+id/findme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/bttnungu"
+            android:text="About"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"/>
+    </RelativeLayout>
+
 
 </FrameLayout>

@@ -1,7 +1,9 @@
 package com.example.tassyakurpasya2;
-//22/05/2021,membuat navigator daily, 10118009, Tassyakur Pasya, IF01
+//31/05/2021,membuat navigator daily, 10118009, Tassyakur Pasya, IF01
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,15 +65,19 @@ public class DailyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_daily, container, false);
+
         final FragmentActivity fragment = getActivity();
         final FragmentActivity fragment2 = getActivity();
         final RecyclerView recyclerView = view.findViewById(R.id.recyleviewfl);
-        //final RecyclerView recyclerView2 = view.findViewById(R.id.recycleview2);
-        //LinearLayoutManager layoutManager2 = new LinearLayoutManager(fragment2, LinearLayoutManager.HORIZONTAL, false);
+        final RecyclerView recyclerView2 = view.findViewById(R.id.recyleviewf2);
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(fragment2, LinearLayoutManager.HORIZONTAL, false);
         LinearLayoutManager layoutManager = new LinearLayoutManager(fragment, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        //recyclerView2.setLayoutManager(layoutManager2);
+        recyclerView2.setLayoutManager(layoutManager2);
+
         // Inflate the layout for this fragment
+
+        //friendlist
         String[] nama = {
                 "Muhammad Ihsan", "Fatahilla Satria Bima Seno", "Dian Rosa Pratama"
         };
@@ -78,6 +85,16 @@ public class DailyFragment extends Fragment {
 
                 R.drawable.ihsan, R.drawable.seno, R.drawable.dian
         };
+
+        //activity
+        String[] aktivitas = {
+                "Bermain Game", "Jalan-jalan", "Kuliah", "Pantai"
+        };
+        int[] gambaract = {
+
+                R.drawable.ic_videogame, R.drawable.ic_train, R.drawable.ic_tugas, R.drawable.ic_laut
+        };
+
         final dailyadapterfl adapter = new dailyadapterfl(fragment,foto_profile,nama);
         new Thread(new Runnable() {
             @Override
@@ -94,8 +111,29 @@ public class DailyFragment extends Fragment {
             }
 
         }).start();
+        final dailyadapteract adapter = new dailyadapteract(fragment,gambaract,aktivitas);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                fragment2.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        recyclerView2.setAdapter(adapter);
+
+
+                    }
+
+                });
+            }
+
+        }).start();
 
         return view;
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        getActivity().setTitle("Daily Activity");
     }
 
 }

@@ -11,27 +11,27 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class dailyadapterfl extends RecyclerView.Adapter<dailyadapterfl.ViewHolder>{
+public class dailyadapteract extends RecyclerView.Adapter<dailyadapteract.ViewHolder>{
     private Context context;
     private int[] gmr;
     private String[] text;
 
     //flist
-    public dailyadapterfl(Context context, int[] gmr, String[] text) {
+    public dailyadapteract(Context context, int[] gmr, String[] text) {
         this.context = context;
         this.gmr = gmr;
         this.text = text;
     }
 
     @Override
-    public dailyadapterfl.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.dailyitem, parent, false);
+    public dailyadapteract.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.dailyactivityitem, parent, false);
 
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull dailyadapterfl.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull dailyadapteract.ViewHolder holder, int position) {
         holder.imageview.setImageResource(gmr[position]);
         holder.textview.setText(text[position]);
 
@@ -49,8 +49,8 @@ public class dailyadapterfl extends RecyclerView.Adapter<dailyadapterfl.ViewHold
         ViewHolder(View view) {
             super(view);
 
-            imageview = view.findViewById(R.id.ihsan);
-            textview = view.findViewById(R.id.teskihsan);
+            imageview = view.findViewById(R.id.activity);
+            textview = view.findViewById(R.id.tesact);
 
 
 

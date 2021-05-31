@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
         list.add(new PageFragment2());
         list.add(new PageFragment3());
 
-
-
         pager = findViewById(R.id.pager);
         pagerAdapter = new SlidePagerAdapter(getSupportFragmentManager(),list);
         pager.setAdapter(pagerAdapter);
