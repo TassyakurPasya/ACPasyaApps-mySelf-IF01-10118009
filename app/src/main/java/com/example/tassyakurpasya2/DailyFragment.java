@@ -65,7 +65,6 @@ public class DailyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_daily, container, false);
-
         final FragmentActivity fragment = getActivity();
         final FragmentActivity fragment2 = getActivity();
         final RecyclerView recyclerView = view.findViewById(R.id.recyleviewfl);
@@ -91,43 +90,32 @@ public class DailyFragment extends Fragment {
                 "Bermain Game", "Jalan-jalan", "Kuliah", "Pantai"
         };
         int[] gambaract = {
-
                 R.drawable.ic_videogame, R.drawable.ic_train, R.drawable.ic_tugas, R.drawable.ic_laut
         };
-
-        final dailyadapterfl adapter = new dailyadapterfl(fragment,foto_profile,nama);
         new Thread(new Runnable() {
             @Override
             public void run() {
-                fragment.runOnUiThread(new Runnable() {
+                    final dailyadapterfl adapter = new dailyadapterfl(fragment,foto_profile,nama);
+                    fragment.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         recyclerView.setAdapter(adapter);
-
-
                     }
-
                 });
             }
-
         }).start();
-        final dailyadapteract adapter = new dailyadapteract(fragment,gambaract,aktivitas);
         new Thread(new Runnable() {
             @Override
             public void run() {
-                fragment2.runOnUiThread(new Runnable() {
+                    final dailyadapteract adapter = new dailyadapteract(fragment2,gambaract,aktivitas);
+                    fragment2.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         recyclerView2.setAdapter(adapter);
-
-
                     }
-
                 });
             }
-
-        }).start();
-
+        });
         return view;
     }
     @Override
@@ -135,5 +123,4 @@ public class DailyFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Daily Activity");
     }
-
 }

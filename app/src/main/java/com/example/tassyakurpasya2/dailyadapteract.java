@@ -39,7 +39,7 @@ public class dailyadapteract extends RecyclerView.Adapter<dailyadapteract.ViewHo
 
     @Override
     public int getItemCount() {
-        return gmr.length;
+        return text.length;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

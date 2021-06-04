@@ -106,7 +106,7 @@
             android:text="My Contact"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito_bold"/>
-        <ImageView
+        <TextView
             android:id="@+id/call"
             android:layout_below="@id/kontak2"
             android:layout_width="50dp"
@@ -165,6 +165,54 @@
             android:layout_marginLeft="40dp"
             android:background="@drawable/bttnungu"
             android:text="About"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"/>
+        <Button
+            android:id="@+id/bttntlfn"
+            android:layout_below="@+id/findme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="130dp"
+            android:background="@drawable/bttnungu"
+            android:text="telepon"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"/>
+        <Button
+            android:id="@+id/bttngmail"
+            android:layout_below="@+id/findme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="220dp"
+            android:background="@drawable/bttnungu"
+            android:text="gmail"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"/>
+        <Button
+            android:id="@+id/bttnig"
+            android:layout_below="@+id/findme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="310dp"
+            android:background="@drawable/bttnungu"
+            android:text="Instagram"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"/>
+        <Button
+            android:id="@+id/bttnmaps"
+            android:layout_below="@+id/bttntlfn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="170dp"
+            android:background="@drawable/bttnungu"
+            android:text="Maps"
             android:textSize="15dp"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito_bold"/>

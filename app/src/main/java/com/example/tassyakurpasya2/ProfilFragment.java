@@ -1,11 +1,17 @@
 package com.example.tassyakurpasya2;
 //22/05/2021,membuat navigator profil, 10118009, Tassyakur Pasya, IF01
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -65,9 +71,35 @@ public class ProfilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profil, container, false);
-        Button about;
+        Button about, telepon, gmail, instagram,maps;
 
         about = view.findViewById(R.id.aboutfp);
+        telepon = view.findViewById(R.id.bttntlfn);
+        gmail = view.findViewById(R.id.bttngmail);
+        instagram = view.findViewById(R.id.bttnig);
+        maps = view.findViewById(R.id.bttnmaps);
+
+        telepon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { callPhone("tel:082325341821");
+            }
+        });
+        gmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { sendMail("acha.pasya2109@gmail.com");
+            }
+        });
+        instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { gotoUrl("https://www.instagram.com/achapasya_/");
+            }
+        });
+        maps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { findMe("https://maps.app.goo.gl/hxCedUyfQJadmbaV7");
+            }
+        });
+
 
         about.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +120,46 @@ public class ProfilFragment extends Fragment {
         // Inflate the layout for this fragment
         return view;
     }
+    private void callPhone(String s) {
+        final int REQUEST_PHONE_CALL = 1;
+
+        Uri uri = Uri.parse(s);
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(uri);
+
+        if (ContextCompat.checkSelfPermission(getActivity(),
+                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(getActivity(),
+                    new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
+        } else {
+
+            startActivity(intent);
+        }
+
+
+    }
+    private void sendMail(String s) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{s});
+        intent.putExtra(Intent.EXTRA_CC, new String[]{"Null"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Null");
+        intent.putExtra(Intent.EXTRA_TEXT, "Null");
+        startActivity(Intent.createChooser(intent, "Ingin Mengirim Email ?"));
+    }
+    private void gotoUrl(String s) {
+        Uri uri = Uri.parse(s);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+    private void findMe(String s) {
+        Uri uri = Uri.parse(s);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+
+    }
+
 
 
 }

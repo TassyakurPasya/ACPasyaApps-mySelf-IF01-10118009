@@ -2,7 +2,12 @@ package com.example.tassyakurpasya2;
 //22/05/2021,membuat navigator gallery, 10118009, Tassyakur Pasya, IF01
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +64,35 @@ public class GalleryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gallery, container, false);
+        View view = inflater.inflate(R.layout.fragment_gallery, container, false);
+        final View view = inflater.inflate(R.layout.fragment_gallery, container, false);
+        final FragmentActivity fragment = getActivity();
+        final RecyclerView recyclerViewGall = view.findViewById(R.id.recyclegallery);
+        recyclerViewGall.setLayoutManager(new GridLayoutManager(fragment, 2));
+
+        int[] gambar_gallery = {
+                R.drawable.aa, R.drawable.bb,
+                R.drawable.cc, R.drawable.dd,
+                R.drawable.ee, R.drawable.ff
+        };
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final adaptergallery adapter = new adaptergallery(fragment, gambar_gallery);
+                fragment.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        recyclerViewGall.setAdapter(adapter);
+                    }
+                });
+            }
+        }).start();
+        return view;
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        getActivity().setTitle("Gallery");
     }
 }

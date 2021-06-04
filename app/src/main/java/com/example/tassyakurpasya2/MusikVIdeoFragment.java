@@ -3,6 +3,9 @@ package com.example.tassyakurpasya2;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +62,44 @@ public class MusikVIdeoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_musikvideo, container, false);
+        View view = inflater.inflate(R.layout.fragment_musikvideo, container, false);
+
+        final FragmentActivity fragment = getActivity();
+        //final RecyclerView recyclerViewVideo = view.findViewById(R.id.recyleviewfvideo);
+        final RecyclerView recyclerViewMusik = view.findViewById(R.id.recyleviewfmusik);
+        //LinearLayoutManager layoutManager = new LinearLayoutManager(fragment, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(fragment, LinearLayoutManager.VERTICAL, false);
+        //recyclerViewVideo.setLayoutManager(layoutManager);
+        recyclerViewMusik.setLayoutManager(layoutManager2);
+
+        //String[] vidoe = {
+        //        R.ra
+        //};
+        //int[] foto_profile = {
+
+          //      R.drawable.ihsan, R.drawable.seno, R.drawable.dian
+        //};
+        String[] judul_lagu_fav = {
+                "Different Heaven - Safe And Sound", "Weeekly(위클리) _ After School",
+                "Andai Aku Bisa - Erwin Gutawa Orchestra, Tulus", "Armada - Aku Di Matamu", "Lisa - Gurenge",
+                "Vickeblanka / 『Black Catcher』", "IU(아이유)_Coin",
+                "IU(아이유) _ Blueming(블루밍)", "Sammy Simorangkir - Dia",
+                "Letto - Hapuskan keluhanmu"
+        };
+//            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    final adaptermusikfav adapter2 = new adaptermusikfav(fragment,judul_lagu_fav);
+//                    fragment.runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            recyclerViewMusik.setAdapter(adapter2);
+//                        }
+//
+//                    });
+//                }
+//            }).start();
+        return view;
     }
+    
 }
