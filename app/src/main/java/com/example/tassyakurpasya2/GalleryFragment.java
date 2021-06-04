@@ -65,29 +65,29 @@ public class GalleryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final View view = inflater.inflate(R.layout.fragment_gallery, container, false);
+      //  final View view = inflater.inflate(R.layout.fragment_gallery, container, false);
         final FragmentActivity fragment = getActivity();
         final RecyclerView recyclerViewGall = view.findViewById(R.id.recyclegallery);
         recyclerViewGall.setLayoutManager(new GridLayoutManager(fragment, 2));
 
-        int[] gambar_gallery = {
-                R.drawable.aa, R.drawable.bb,
-                R.drawable.cc, R.drawable.dd,
-                R.drawable.ee, R.drawable.ff
-        };
+//        int[] gambar_gallery = {
+//                R.drawable.aa, R.drawable.bb,
+//                R.drawable.cc, R.drawable.dd,
+//                R.drawable.ee, R.drawable.ff
+//        };
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                final adaptergallery adapter = new adaptergallery(fragment, gambar_gallery);
-                fragment.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        recyclerViewGall.setAdapter(adapter);
-                    }
-                });
-            }
-        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                final adaptergallery adapter = new adaptergallery(fragment, gambar_gallery);
+//                fragment.runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        recyclerViewGall.setAdapter(adapter);
+//                    }
+//                });
+//            }
+//        }).start();
         return view;
     }
     @Override

@@ -1,5 +1,5 @@
 package com.example.tassyakurpasya2;
-
+//29/05/2021,membuat adapter activity , 10118009, Tassyakur Pasya, IF01
 
 import android.content.Context;
 import android.view.LayoutInflater;
